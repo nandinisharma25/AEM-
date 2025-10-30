@@ -1,0 +1,163 @@
+ :root {
+            --lightest-pink: #FFF0F5;
+            --very-light-pink: #FCE4EC;
+            --soft-pink: #F8BBD9;
+            --white: #FFFFFF;
+            --off-white: #F5F5F5;
+            --light-gray: #E0E0E0;
+            --red: #FF0000;
+            --nav-bg: #FFC0CB;
+            --nav-hover: #FF69B4;
+            --nav-text: #FFFFFF;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--off-white);
+            color: #333;
+            display: flex;
+        }
+.sidebar {
+            width: 200px;
+            background-color: var(--nav-bg);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding-top: 80px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+        }
+        .sidebar a {
+            color: var(--nav-text);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 5px 10px;
+            transition: background-color 0.3s;
+        }
+                
+        .header {
+            position: fixed;
+            top: 0;
+            left: 200px;
+            right: 0;
+            background-color: var(--white);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 99;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--soft-pink);
+        }
+        .profile {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        main {
+            margin-left: 200px;
+            margin-top: 80px;
+            padding: 20px;
+            background-color: var(--lightest-pink);
+        }
+        .stories {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+            background-color: var(--very-light-pink);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .story {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 10px;
+            border: 2px solid var(--soft-pink);
+            overflow: hidden;
+            position: relative;
+        }
+        .story img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .story::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3));
+            pointer-events: none;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: var(--soft-pink);
+            border-bottom: 2px solid var(--very-light-pink);
+            padding-bottom: 10px;
+        }
+        .artist-grid, .album-grid, .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .item {
+            background-color: var(--white);
+            border: 1px solid var(--very-light-pink);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .item h3 {
+            margin: 10px 0;
+            color: var(--soft-pink);
+        }
+        .item p {
+            color: #666;
+        }
+        .live-item {
+            background-color: var(--very-light-pink);
+        }
+        .live-item .live-badge {
+            background-color: var(--red);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
